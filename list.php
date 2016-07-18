@@ -128,6 +128,125 @@
                             </div>
                             
                         <div class="adds-wrapper jobs-list">
+                        
+                            
+                            <?php 
+                       
+                      
+                        $a = 'hola';
+                        ?>
+                       
+                       
+                            
+                            
+                    
+                        class TrayectoSimple {
+                            var $origen;
+                            var $destino;
+                            function dimeElTrayecto(){
+                                return $this->origen  . "a" . $this->destino;
+                            }
+                        }    
+                        $b = new TrayectoSimple();
+                        $b->origen = "huelva";
+                        $b->destino = "Córdoba";
+                        
+                        $a = array();
+                        $a[0]=$b;
+                        $a[1]=$b;
+                        
+                        echo "<pre>";
+                        var_dump ($a);
+                        echo "</pre";
+                        die($b->dimeElTrayecto());
+                        
+                        
+                    
+                        $a = array(1,2,array("a", "b", "c"));
+                        var_dump ($a);
+                        
+                        
+                        
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                           
+                            
+                                // Creamos un objeto de tipo Trayecto y lo asignamos a la variable trayecto1
+                                
+                                // Rellenamos el objeto con una serie de datos
+                                
+                                    class Trayecto {
+                                        var $name;
+                                        var $trayecto;
+                                        var $direccion;
+                                        var $hora;
+                                        var $precio;
+                                        var $plazas;
+                                            
+                                        function rellenarObjeto($p1, $p2, $p3, $p4, $p5, $p6) {
+                                            $this->name = $p1;
+                                            $this->trayecto = $p2;
+                                            $this->direccion = $p3;
+                                            $this->hora = $p4;
+                                            $this->precio = $p5;
+                                            $this->plazas = $p6;
+                                        }
+                                    }
+                                   
+                            $trayecto1 = new Trayecto();
+                            $trayectos = array(
+                                    1 => array(
+                                        'name' =>"Antonio Ruiz",
+                                        'trayecto' =>"Córdoba - Sevilla",
+                                        'direccion' =>"la luna, 23",
+                                        'hora' =>"9:00",
+                                        'precio' =>"10€",
+                                        'plazas libres' => "3"
+                                ),
+                                    2 => array(
+                                        'name' => "German Perez",
+                                        'trayecto' =>"Córdoba - Huelva",
+                                        'direccion' =>"Pintor lucena, 7",
+                                        'hora' => "7:00",
+                                        'precio' => "15€",
+                                        'plazas libres' => "4"
+                                ),
+                                    3 => array(
+                                        'name' =>"Dolores Navas",
+                                        'trayecto' =>"Sevilla - Cadiz",
+                                        'direccion' =>"Olmo, 34",
+                                        'hora' =>"10:00",
+                                        'precio' =>"10€",
+                                        'plazas libres' => "2"
+                                ),
+                                    4 => array(
+                                        'name' =>"Luis Fernandez",
+                                        'trayecto' =>"Malaga - Madrid",
+                                        'direccion' =>"El puerto, 37",
+                                        'hora' =>"8:00",
+                                        'precio' =>"20€",
+                                        'plazas libres' => "1"
+                                ),
+                                );    
+                            for ($i = 1; $i <= count($trayectos); $i = $i + 1)  
+                                {
+
+                               
+                            //die($_GET["country"]);
+                           
+
+                                
+                            ?>
+                            
+                            
                             <div class="item-list job-item">
 
 
@@ -139,16 +258,32 @@
                                 <!--/.photobox-->
                                 <div class="col-sm-10  col-xs-10  add-desc-box">
                                     <div class="add-details jobs-item">
-                                        <h5 class="company-title"><a href="">Antonio Pérez</a></h5>
-                                        <h4 class="job-title"><a href="job-details.html"> Córdoba a Huelva </a></h4>
-                                        <span class="info-row">  <span class="item-location"><i
-                                                class="fa fa-map-marker"></i> Calle Poeta Paredes, 25 </span> <span class="date"><i
-                                                class=" icon-clock"> </i>9:00</span><span class=" salary">	<i
-                                                class=" icon-money"> </i> 10€</span></span>
+                                        <h5 class="company-title"><a href=""><?php echo $trayectos[$i]['name']; ?></a></h5>
+                                        <h4 class="job-title"><a href="job-details.html"><?php echo $trayectos[$i]['trayecto']; ?></a></h4>
+                                        <span class="info-row">  <span class="item-location"><?php echo $trayectos[$i]['direccion']; ?></span>
+                                               <span   class=" icon-clock"> </i></span><span class="hora"><?php echo $trayectos[$i]['hora']; ?></span>
+                                                <span  class=" icon-money"> </i></span><span><?php echo $trayectos[$i]['precio']; ?></span>
+                                                
+                                                
 
+                                        <?php
+                                            //1.declaramos una variable con el contenido completo de la frase:"Un viaje...."
+                                            $frase = " Un viaje entretenido y seguro, no me gusta correr. Además, pararemos a mitad de camino para tomar una rica tostada de sobraasada, y luego, directos a Huelva.";
+                                            
+                                            //2.Recortar la variable, substr, para que solo contenga los 80 primeros caracteres.
+                                            $frase1= substr($frase, 0, 80);
+                                             
+                                            //3.Vamos a mostrar la variable (solo los 60 primeros caracteres) y despues vamos a mostrar tres puntos.
+                                            $frase2=$frase1."...";
+                                            
+                                        
+                                            
+                                        ?>
+                                       
+                                            
                                         <div class="jobs-desc">
-                                            Un viaje entretenido y seguro, no me gusta correr. Además, pararemos a mitad de camino para tomar una rica tostada de sobraasada, y luego, directos a Huelva.
-                                        </div>
+                                          <?php echo $frase2;?>
+                                       </div>
 
 
                                         <div class="job-actions">
@@ -156,7 +291,8 @@
                                                 <li>
                                                     <span class="save-job">
                                                         <span class="fa fa-users"></span>
-                                                        3 plazas
+                                                        plazas libres
+                                                         <span  class=" icon-plazas libres"> </i></span><span><?php echo $trayectos[$i]['plazas libres']; ?></span>
                                                     </span>
                                                 </li>
                                             </ul>
@@ -170,6 +306,13 @@
                                 <!--/.add-desc-box-->
                             </div>
                             <!--/.job-item-->
+                            
+                            
+                                
+                            <?php
+                                }
+                            ?>
+                            
                         </div>
                     </div>    
                 </div>    
